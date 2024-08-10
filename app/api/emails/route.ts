@@ -5,12 +5,12 @@ const resend = new Resend('re_Az5avQSK_34TusgLQ4KC73LX65JMYVuJS');
 
 
 export async function POST(request: Request) {
-    const {email,firstname } = await request.json();
+    const {email,firstname,message } = await request.json();
 
     await resend.emails.send({
         from: 'onboarding@resend.dev',
         to: 'trkhamarat@gmail.com',
         subject: 'hello world',
-        react: Welcome({firstname}),
+        react: Welcome({firstname,message}),
     });
 }

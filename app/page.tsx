@@ -21,7 +21,7 @@ export default function Home() {
             <ContactUs></ContactUs>
             <Footer></Footer>
             <button onClick={async ()=>{
-                await fetch('/api/emails',{method:"POST",body:JSON.stringify({email:"trkhamarat@gmail.com",firstname:"TARIK"})},
+                await fetch('/api/emails',{method:"POST",body:JSON.stringify({email:"trkhamarat@gmail.com",firstname:"TARIK",message:"Bu mesaj içeriğidir."})},
                     )
             }}>
                 SEND EMAİL
