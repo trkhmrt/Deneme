@@ -9,20 +9,42 @@ import TabsDemo from "@/components/Tabs";
 import CardDefault from "@/components/Card";
 import Hero from "@/components/Hero";
 import ContactUs from "@/components/ContactUs";
+import Stats from "@/components/Stats";
 
 export default function Home() {
     return (
         <main>
             <Hero></Hero>
             <CardDefault></CardDefault>
+            <Stats></Stats>
             <LayoutGridDemo></LayoutGridDemo>
             <MarqueeDemoVertical></MarqueeDemoVertical>
             <AccordionDemo></AccordionDemo>
             <ContactUs></ContactUs>
             <Footer></Footer>
             <button onClick={async ()=>{
-                await fetch('/api/emails',{method:"POST",body:JSON.stringify({email:"trkhamarat@gmail.com",firstname:"TARIK",message:"Bu mesaj içeriğidir."})},
-                    )
+                try {
+                    const response = await fetch('https://main.d3ggb0rp45afek.amplifyapp.com/api/emails', {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            email: "trkhamarat@gmail.com",
+                            firstname: "TARIK",
+                            message: "Bu mesaj içeriğidir."
+                        }),
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok.');
+                    }
+
+                    const data = await response.json();
+                    console.log('Success:', data);
+                } catch (error) {
+                    console.error('Error:', error);
+                }
             }}>
                 SEND EMAİL
             </button>

@@ -7,7 +7,7 @@ import {
 
 export default function AccordionDemo() {
     return (
-        <div className="flex items-center justify-center h-screen ">
+        <div className="flex items-center justify-center h-screen px-4 sm:px-6 md:px-8 lg:px-12">
             <Accordion type="single" collapsible className="w-full max-w-lg">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>Is it accessible?</AccordionTrigger>
