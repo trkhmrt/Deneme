@@ -24,7 +24,7 @@ export default function Home() {
             <Footer></Footer>
             <button onClick={async ()=>{
                 try {
-                    const response = await fetch('https://main.d3ggb0rp45afek.amplifyapp.com/api/emails', {
+                    const response = await fetch('/api/emails', {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json',
