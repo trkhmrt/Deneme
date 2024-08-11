@@ -6,9 +6,7 @@ const nextConfig = {
     images: {
         domains: ['images.unsplash.com','aceternity.com',"assets.aceternity.com","thumbs2.imgbox.com"],
     },
-   distDir:'build',
-    output:'export',
-
+ 
 
 
 
